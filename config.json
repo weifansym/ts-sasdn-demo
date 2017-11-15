@@ -1,0 +1,23 @@
+{
+  "name": "gateway",
+  "host": "127.0.0.1",
+  "port": 9092,
+  "enableJWT": false,
+  "enableVhost": true,
+  "enableCors": true,
+  "jwtSecret": "sasdn",
+  "enableGzip": true,
+  "maxAge": 0,
+  "staticPath": "./public",
+  "compressOpt": {
+    "threshold": "100kb"
+  },
+  "redisConfig": {
+    "port": 6379,
+    "host": "172.16.80.120",
+    "family": 4,
+    "password": "auth",
+    "db": 0
+  },
+  "tracer": false
+}

@@ -1,0 +1,11 @@
+{
+    "type": "mongodb",
+    "host": "172.16.0.240",
+    "port": 27017,
+    "database": "preview-db-dev-om-shinezone",
+    "synchronize": true,
+    "logging": false,
+    "entities": [
+        "build/entity/relation/*.js"
+    ]
+}

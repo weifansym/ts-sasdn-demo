@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+package question;
+
+message Question {
+    string id = 1;
+    string title = 2;
+    string answerA = 3;
+    string answerB = 4;
+    int32 score = 5;
+    string trueAnswer = 6;
+}
+
+
+message CreateQuestionRequest {
+    string id = 1;
+    string title = 2;
+    string answerA = 3;
+    string answerB = 4;
+    int32 score = 5;
+    string trueAnswer = 6;
+}
+
+message CreateQuestionResponse {
+    int32 code = 1;
+    string message = 2;
+    repeated Question data = 3;
+}
+
+message UpdateQuestionRequest {
+    string title = 1;
+}
+
+message UpdateQuestionResponse {
+    int32 code = 1;
+    string message = 2;
+    repeated Question data = 3;
+}
+
+message DeleteQuestionRequest {
+    string title = 1;
+}
+
+message DeleteQuestionResponse {
+    int32 code = 1;
+    string message = 2;
+    repeated Question data = 3;
+}
+
+message QuestionListRequest {
+
+}
+
+message QuestionListResponse {
+    int32 code = 1;
+    string message = 2;
+    repeated Question data = 3;
+}
+
+service QuestionService {
+    rpc CreateQuestion (CreateQuestionRequest) returns (CreateQuestionResponse) {
+        option (google.api.http) = {
+            post: "/v1/user/createQuestion"
+            body: "*"
+        };
+    };
+    rpc UpdateQuestion (UpdateQuestionRequest) returns (UpdateQuestionResponse) {
+        option (google.api.http) = {
+            post: "/v1/user/updateQuestion"
+            body: "*"
+        };
+    };
+    rpc DeleteQuestion (DeleteQuestionRequest) returns (DeleteQuestionResponse) {
+        option (google.api.http) = {
+            post: "/v1/user/deleteQuestion"
+            body: "*"
+        };
+    };
+    rpc QuestionList (QuestionListRequest) returns (QuestionListResponse) {
+        option (google.api.http) = {
+            post: "/v1/user/questionList"
+            body: "*"
+        };
+    };
+}

@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+package user;
+
+message User {
+  string name = 1;
+  int32 age = 2;
+}
+
+message GetUserListRequest {
+
+}
+
+message GetUserListResponse {
+    repeated User userList = 1;
+}
+
+message GetUserInfoRequest {
+    string name = 1;
+}
+
+message GetUserInfoResponse {
+    string name = 1;
+    int32 age = 2;
+}
+
+message setUserInfoRequest {
+    string name = 1;
+    int32 age = 2;
+}
+
+message setUserInfoResponse {
+    string name = 1;
+    int32 age = 2;
+}
+
+message DeleteUserInfoRequest {
+    string name = 1;
+}
+
+message DeleteUserInfoResponse {
+    string name  = 1;
+}
+
+service UserService {
+    rpc GetUserList (GetUserListRequest) returns (GetUserListResponse) {
+        option (google.api.http) = {
+            post: "/v1/user/getUserList"
+            body: "*"
+        };
+    };
+
+
+    rpc GetUserInfo (GetUserInfoRequest) returns (GetUserInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/user/getUserInfo"
+            body: "*"
+        };
+    }
+    rpc setUserInfo (setUserInfoRequest) returns (setUserInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/user/setUserInfo"
+            body: "*"
+        };
+    }
+    rpc DeleteUserInfo (DeleteUserInfoRequest) returns (DeleteUserInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/user/delUser"
+            body: "*"
+        };
+    }
+}

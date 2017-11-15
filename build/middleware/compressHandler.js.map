@@ -1,0 +1,1 @@
+{"version":3,"file":"compressHandler.js","sourceRoot":"","sources":["../../src/middleware/compressHandler.ts"],"names":[],"mappings":";;AAAA,4CAA2C;AAC3C,+BAAmC;AAMnC;IACE,QAAQ,CAAE,IAAoB;QAC5B,MAAM,CAAC,WAAW,CAAC;YACjB,SAAS,EAAE,IAAI,CAAC,SAAS,IAAI,OAAO;YACpC,KAAK,EAAE,mBAAY;SACpB,CAAC,CAAA;IACJ,CAAC;CACF;AAED,MAAM,OAAO,GAAoB,IAAI,eAAe,EAAE,CAAA;AAEtD,kBAAe,OAAO,CAAA"}
